@@ -1,10 +1,7 @@
 
 package proyectoreceta;
 
-/**
- *
- * @author USUARIO
- */
+
 public class ProyectoReceta {
 
     /**
@@ -12,6 +9,7 @@ public class ProyectoReceta {
      */
     public static void main(String[] args) {
         System.err.println("Hello World");
+        Conexiones.getConexion();
     }
     
 }
