@@ -11,9 +11,14 @@ import proyectoreceta.Lista;
 public class Grafica extends javax.swing.JFrame implements ActionListener{
     JPanel fondo;
     JButton boton;
-    JTextField cajaBus;
+    JTextField cajaBus, cajaBus2;
+    JLabel nombre, dificultad;
+    
     Lista listadePostres= new Lista();
     public Grafica(){
+        
+        //fondo.setLayout(null);
+        
         this.setSize(500,400);
         setTitle("Lista de Postres");
         this.setResizable(false);
@@ -26,6 +31,11 @@ public class Grafica extends javax.swing.JFrame implements ActionListener{
         setIconImage(miIcono);
         setVisible(true);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
+        
+        
+        
+        cajaBusqueda2();
+        
     }
     private void fondo_interno(){
         fondo= new JPanel();
@@ -52,10 +62,12 @@ public class Grafica extends javax.swing.JFrame implements ActionListener{
     }
     private void botones(){
         boton = new JButton ("AÑADIR");
-        boton.setBounds (300,150,100,30);
+        boton.setBounds (280,210,100,30);
         boton.setFont(new Font ("lucida calligraphy", Font.BOLD , 11));
         fondo.add (boton);
         boton.addActionListener(this);
+        
+        
     }public void actionPerformed(ActionEvent e){
         if(e.getSource() == boton ){
                 if(estado()){
@@ -69,20 +81,36 @@ public class Grafica extends javax.swing.JFrame implements ActionListener{
     }
     public boolean estado(){
             boolean existe = false;
-            String nom = cajaBus.getText();
+
+            String nom = cajaBus.getText().toUpperCase(); //Todo en mayuscula
+            
+            int nivel = Integer. parseInt (cajaBus2.getText());
             existe = listadePostres.verificar(nom);
             if (existe){
                  existe= true;
             }else{
-                listadePostres.agregar(nom);
+                listadePostres.agregar(nom,nivel);
+                
                 existe= false;
             }
             return existe;
         } 
     private void cajaBusqueda (){
-        cajaBus = new JTextField();
+        cajaBus = new JTextField("Nombre de receta");
         cajaBus.setBounds (240,100,200,30);
         fondo.add(cajaBus);
+        
+        
+
     }
    
+     private void cajaBusqueda2 (){
+        cajaBus2 = new JTextField("Dificultad");
+        cajaBus2.setBounds (240,160,200,30);
+        fondo.add(cajaBus2);
+        
+    }
+    
+    
+    
 }

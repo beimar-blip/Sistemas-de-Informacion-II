@@ -18,12 +18,14 @@ public class Lista {
        public Lista(){
         
     }
-    public void agregar(String pos){
+    public void agregar(String nombre,int nivel){
         try {
             Connection conex;
             conex = Conexiones.getConexion();
             Statement sta = conex.createStatement();
-            ResultSet rs = sta.executeQuery("INSERT INTO Recetas VALUES ('"+ pos +"') ");
+            ResultSet rs = sta.executeQuery("INSERT INTO Recetas VALUES ('"+ nombre + "' ," + nivel +")" );
+            
+           
             }catch (SQLException ex){
                 
         }
