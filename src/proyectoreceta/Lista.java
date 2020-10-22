@@ -8,7 +8,7 @@ package proyectoreceta;
 import java.sql.*;
 /**
  *
- * @author Beimar
+ * @author Beimar2
  */
 public class Lista {
    
