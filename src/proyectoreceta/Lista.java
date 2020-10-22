@@ -17,7 +17,7 @@ public class Lista {
 
        public Lista(){
         
-     }
+    }
     public void agregar(String pos){
         try {
             Connection conex;
