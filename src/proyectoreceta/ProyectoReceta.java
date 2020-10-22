@@ -5,6 +5,8 @@
  */
 package proyectoreceta;
 
+import lista_de_postres.Grafica;
+
 /**
  *
  * @author USUARIO
@@ -15,8 +17,15 @@ public class ProyectoReceta {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+<<<<<<< OURS
+         Grafica graf = new Grafica();
+        graf.setVisible (true);
+        
+
+=======
         System.out.print("hola");
         // 
+>>>>>>> THEIRS
     }
     
 }
